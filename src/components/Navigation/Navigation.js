@@ -1,13 +1,23 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "./navigation.css";
 
-export const Navigation = () =>{
+export const Navigation = ({user, onLogout}) =>{
+    const navigate = useNavigate();
+    
+    const handleLogout = () => {
+        onLogout();
+        navigate("/")
+    }
+
+    console.log(user);
+
     return(
         <div className='navigation'>
-            <Link to="/">Register</Link>
-            <Link to="/Login">Login</Link>
             <Link to="/Home">Home</Link>
             <Link to="/Add">Add</Link>
+            <button onClick={handleLogout}>Logout</button>
         </div>
+
+       
     )   
 }

@@ -1,23 +1,31 @@
-import {Routes, Route} from 'react-router-dom';
+import { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
 import { Register } from './views/Register/Register';
 import { Login } from './views/Login/Login';
 import { Home } from './views/Home/Home';
 import { Add } from './views/Add/Add';
-import { Navigation } from './components/Navigation/Navigation';
+import { PageLayout } from './components/PageLayout';
 import './App.css';
 
 
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  const handleLogin = () => setUser({ username: "" });
+  const handleLogout = () => setUser(null);
+    
+  
 
   return (
     <div className="App">
-      <Navigation />
       <Routes>
-        <Route path="/" element={<Register />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Home" element={<Home />} />
-        <Route path="/Add" element={<Add />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Login" element={<Login onLogin={handleLogin}/>} />
+        <Route path="/" element= {<PageLayout user={user} onLogout={handleLogout}/>}>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Add" element={<Add />} />
+        </Route>     
       </Routes>
     </div>
   );
