@@ -23,7 +23,7 @@ function App() {
           <Route path="/Register" element={<Register />} />
           <Route path="/Login" element={<Login onLogin={handleLogin}/>} />
         <Route path="/" element= {<PageLayout user={user} onLogout={handleLogout}/>}>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/Home" element={<Home onLogin={handleLogin} />} />
           <Route path="/Add" element={<Add />} />
         </Route>     
       </Routes>
