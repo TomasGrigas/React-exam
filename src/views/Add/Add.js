@@ -3,7 +3,7 @@ import { BASE_URL } from "../../utils/constants";
 import { BackgroundColor, ButtonStyle, ErrorColor, InputStyle, LinkColor, MenuStyle,TitleColor } from "../../components/styledComponents";
 import { useNavigate } from 'react-router-dom';
 
-export function Add() {
+ const Add = () => {
   const [addError, setAddError] = useState();
   const [title, setTitle] = useState([]);
   const [description, setDescription] = useState([]);
@@ -59,3 +59,4 @@ export function Add() {
 
   )
 }
+export default Add;

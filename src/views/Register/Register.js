@@ -6,7 +6,7 @@ import { AlreadyColor, BackgroundColor, ButtonStyle, ErrorColor, LinkColor, Menu
 
 
 
-export const Register = ()=>{   
+const Register = ()=>{   
        const [registerError, setRegisterError] = useState();
        const navigate = useNavigate();
        const [email, setEmail] = useState("");
@@ -62,3 +62,5 @@ export const Register = ()=>{
         
     )
 }
+
+export default Register;

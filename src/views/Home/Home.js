@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { BackgroundColor, LinkColor, MenuStyle, SkillsBoxStyle, TitleColor } from "../../components/styledComponents";
 import { BASE_URL } from "../../utils/constants";
 
-
-export function Home() {
+const Home = () => {
   const [posts, setPosts] = useState([]);
   const token = localStorage.getItem("token")
   useEffect(() => {
@@ -40,3 +39,4 @@ export function Home() {
 
   )
 }
+export default Home;

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { BASE_URL } from "../../utils/constants";
 import { AlreadyColor, BackgroundColor, ButtonStyle, ErrorColor, LinkColor, MenuStyle, TitleColor } from "../../components/styledComponents";
 
-export const Login = ()=>{
+const Login = ()=>{
             const [loginError, setLoginError] = useState();
             const navigate = useNavigate();
             const [email, setEmail] = useState("");
@@ -62,3 +62,5 @@ export const Login = ()=>{
 
          )
          }
+
+export default Login;
