@@ -1,44 +1,41 @@
 import { useState } from "react";
 import { BASE_URL } from "../../utils/constants";
 import { useNavigate } from "react-router";
-import { AlreadyColor, BackgroundColor, ButtonStyle, ErrorColor, LinkColor, MenuStyle, TitleColor } from "../../components/styledComponents";
-
-
+import { AlreadyColor, BackgroundColor, ButtonStyle, ErrorColor, LinkColor, MenuStyle, TitleColor, LinkColor2 } from "../../components/styledComponents";
 
 
 const Register = ()=>{   
-       const [registerError, setRegisterError] = useState();
-       const navigate = useNavigate();
-       const [email, setEmail] = useState("");
-       const [password, setPassword] = useState("");
+    const [registerError, setRegisterError] = useState();
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-       const handleRegister = (e) => {
-            e.preventDefault();
-            fetch(`${BASE_URL}/auth/register`,{
-                method: 'POST',
-                headers: {
+    const handleRegister = (e) => {
+        e.preventDefault();
+        fetch(`${BASE_URL}/auth/register`,{
+            method: 'POST',
+            headers: {
                 'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    email,
-                    password
-                })
+            body: JSON.stringify({
+                email,
+                password
             })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if(data.err){
-                    setRegisterError(data.err);
-                } else {
-                    navigate("/Login")
-                }
-            });
-        }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.err){
+                setRegisterError(data.err);
+            } else {
+                navigate("/")
+            }
+        });
+    }
 
     return(
         <BackgroundColor>
             <MenuStyle>
-                <LinkColor to="/Login">LOGIN</LinkColor>
+                <LinkColor to="/">LOGIN</LinkColor>
                 <LinkColor to="/Register">REGISTER</LinkColor>
             </MenuStyle>
             <img
@@ -51,7 +48,7 @@ const Register = ()=>{
                 Please Register Here
             </TitleColor>
             <div>
-            <AlreadyColor>Already Registered? Click here to<LinkColor to="/Login">LOGIN</LinkColor></AlreadyColor>     
+                <AlreadyColor>Already Registered? Click here to<LinkColor2 to="/">LOGIN</LinkColor2>.</AlreadyColor>     
             </div>
             <form onSubmit={handleRegister}>
                 <input value ={email} onChange ={(e)=>setEmail(e.target.value)} type="email" placeholder = "Email"/>
