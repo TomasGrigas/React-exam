@@ -28,7 +28,7 @@ export const Login = ()=>{
                      setLoginError(data.err);
                  } else {
                     localStorage.setItem("token", data.token);
-                     navigate("/Home")
+                     navigate("/Add")
 
                  }
              });

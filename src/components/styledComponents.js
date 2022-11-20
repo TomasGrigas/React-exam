@@ -30,3 +30,13 @@ export const AlreadyColor = styled.h5`
     margin: 15px 0px 10px 0px;
     color: white;
     `
+export const SkillsBoxStyle =styled.p`
+    border: 2px solid black;
+    margin: 10px 200px 10px 200px
+`    
+export const InputStyle = styled.div`
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 150px 0px 150px
+`
