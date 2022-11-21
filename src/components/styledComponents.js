@@ -1,0 +1,51 @@
+import  styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const TitleColor = styled.h1`
+    color: White;
+    padding: 30px 10px 10px 10px
+`
+export const BackgroundColor = styled.div`
+    background-color: grey;
+    padding: 10px
+`
+export const MenuStyle = styled.h3`
+    background-color: white;
+    padding: 40px;
+`
+export const ButtonStyle = styled.button`
+    background-color: grey;
+    color: white;
+    margin: 10px 10px 40px 0px
+`
+export const ErrorColor = styled.h1`
+    color: red;
+`
+export const LinkColor = styled(Link)`
+    color: white;
+    background-color: grey;
+    text-decoration: none;
+    padding: 30px;
+    border: 3px solid black;
+    margin: 1px
+`
+export const LinkColor2 = styled(Link)`
+    color: Black;
+    background-color: grey;
+    text-decoration: none;
+    margin: 5px
+`
+export const AlreadyColor = styled.h5`
+    margin: 15px 0px 10px 0px;
+    color: white;
+`
+export const SkillsBoxStyle =styled.p`
+    border: 2px solid white;
+    margin: 10px 300px 10px 300px
+`    
+export const InputStyle = styled.div`
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 150px 0px 150px
+`
